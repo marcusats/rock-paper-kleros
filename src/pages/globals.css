@@ -25,3 +25,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: none; /* for Webkit browsers */
+}
+
+.custom-scrollbar {
+  -ms-overflow-style: none;  /* for Internet Explorer and Edge */
+  scrollbar-width: none; /* for Firefox */
+}
