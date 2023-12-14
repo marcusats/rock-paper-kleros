@@ -51,7 +51,6 @@ const WaitingForNextMove: React.FC = () => {
 
             await walletClient?.writeContract(request)
 
-            deleteGame(game?.id as number)
             setLoading(false)
             router.push("/")
             goTo(0)

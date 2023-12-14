@@ -71,7 +71,6 @@ const Ready: React.FC = ( ) => {
             })
 
             await walletClient?.writeContract(request)
-            deleteGame(game?.id as number)
 
         
             goTo(0)
