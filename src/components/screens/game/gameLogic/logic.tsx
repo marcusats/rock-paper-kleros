@@ -93,8 +93,9 @@ const Logic: React.FC<LogicProps> = ({game, userAddress}) => {
                     value: ethers.parseEther(game?.stake as string)
                 })
 
-                await walletClient?.writeContract(request)
+                const transaction = await walletClient?.writeContract(request)
 
+                console.log("transaction",transaction)
                 const move: Move = {address:userAddress as string, move: (selectedChoice as number + 1),salt:  Number(salt),gameId: game?.id as number  }
 
                 addMove(move)

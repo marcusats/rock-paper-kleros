@@ -71,6 +71,7 @@ const GameScreen: React.FC = () => {
     }
 
     useEffect(()=>{
+        console.log(game)
         setIsGameReady(game?.ready as boolean)
     },[game])
 
@@ -81,7 +82,7 @@ const GameScreen: React.FC = () => {
             (gameAddress === "create" ) ? localVerifyPlayer() : chainVerifyPlayer()
         }
 
-    },[gameAddress])
+    },[gameAddress, userAddress])
 
 
 

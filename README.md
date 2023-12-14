@@ -20,11 +20,8 @@ This project is a decentralized application (DApp) for playing an extended versi
 
 ## Security Considerations
 
-## Security Considerations
-
 In developing this DApp, particular attention has been given to security aspects to prevent loss of ETH and to safeguard against potential attacks. Key considerations include:
 
-- **Front-Running Attacks**: Since Ethereum transactions are public, malicious users could try to benefit from seeing a player's move before it's confirmed on the blockchain. We mitigate this by having the first player commit only a hash of their move and a random salt. The actual move is revealed only after the second player has played, preventing front-running.
 
 - **Replay Attacks**: Ensure that each game instance is unique and can't be reused in replay attacks. This is done by maintaining a game state tied to specific players and stakes, making each game session distinct.
 

@@ -60,10 +60,10 @@ const Ready: React.FC = ( ) => {
         setLoading(true)
         
         const move = getMove(userAddress as string, game?.id as number)
-        
+        console.log(gameAddress)
         try{
             const { request } = await publicClient.simulateContract({
-                address: game?.address as `0x${string}`,
+                address: gameAddress as `0x${string}`,
                 abi: abiRPS,
                 functionName: 'solve',
                 args: [move?.move, move?.salt as number],

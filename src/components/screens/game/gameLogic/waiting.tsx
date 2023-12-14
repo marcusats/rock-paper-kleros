@@ -27,7 +27,11 @@ const WaitingForNextMove: React.FC = () => {
             })
 
             setLastAction(Number(last))
+            const game: Game | null = getGameById(selectedGameId);
+            
+            setGame(game as Game)
 
+            console.log("game", game)
         }
 
 
@@ -37,8 +41,7 @@ const WaitingForNextMove: React.FC = () => {
     async function getStake(){
         setLoading(true)
         try{
-            const game: Game | null = getGameById(selectedGameId);
-            setGame(game as Game)
+            
             const { request } = await publicClient.simulateContract({
                 address: game?.address as `0x${string}`,
                 abi: abiRPS,
@@ -68,6 +71,7 @@ const WaitingForNextMove: React.FC = () => {
         return res; 
     };
     
+   
 
 
     return (

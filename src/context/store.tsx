@@ -4,8 +4,11 @@ import Start from "@/components/screens/start";
 import GameScreen from "@/components/screens/game";
 import CreateScreen from "@/components/screens/create";
 import Winner from "@/components/winner";
-import { useAccount } from "wagmi";
-import { timeEnd } from "console";
+import { useAccount, usePublicClient } from "wagmi";
+import { getGameByAddress,updateGame } from "@/utils/storage";
+import { abiRPS } from "@/utils/contracts/RPS";
+import { Game, Players } from "@/utils/types";
+
 
 interface ContextProps {
   selectedGameId: number;
@@ -60,18 +63,59 @@ export const GlobalContextProvider= ({ children }) => {
   const [connected, setConnected] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
   const {isConnected} = useAccount()
+  const publicClient = usePublicClient()
   const TIMEOUT = 300;
 
+  async function set() {
+    if(gameAddress !== "" && gameAddress !== "create" ){
+        const last = await publicClient.readContract({
+          address: gameAddress as `0x${string}`,
+          abi: abiRPS,
+          functionName: 'lastAction',
+        })
+        setLastAction(last as number)
+    }
+  }
+  async function setC2() {
+    if(gameAddress !== "" && gameAddress !== "create" ){
+      const move = await publicClient.readContract({
+        address: gameAddress as `0x${string}`,
+        abi: abiRPS,
+        functionName: 'c2',
+      })
+      const game = getGameByAddress(gameAddress)
+      
+      const newGame: Game = { 
+        id: game?.id as number, 
+        name: game?.name as string, 
+        players: game?.players as Players,
+        address: game?.address as string,
+        stake: game?.stake as string,
+        ready: move as number > 0,
+      } 
+
+      updateGame(game?.id as number, newGame)
+        
+    }
+  }
+
+  useEffect(()=>{
+    set()
+  },[])
+
+  useEffect(()=>{
+    setC2()
+  },[gameAddress])
 
   useEffect(()=>{
     setConnected(isConnected)
   },[isConnected])
 
   useEffect(()=>{
-        const currentTime = Math.floor(Date.now() / 1000); 
-        const timeSinceAction = currentTime - lastAction; 
-        const res = Math.max(TIMEOUT - timeSinceAction, 0);
-        setTimedout(res<=0)
+    const currentTime = Math.floor(Date.now() / 1000); 
+    const timeSinceAction = currentTime - lastAction; 
+    const res = Math.max(TIMEOUT - timeSinceAction, 0);
+    setTimedout(res<=0)
   },[lastAction])
   
   const { step, next, steps, currentStepIndex, goTo } = useSteps([<Start />, <GameScreen />, <CreateScreen/>, <Winner desc={decision}/>]);
