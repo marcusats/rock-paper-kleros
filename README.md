@@ -48,6 +48,8 @@ npm run dev
 2. **Create or Join a Game**: Follow the on-screen instructions to participate in a game.
 3. **Play**: Choose your move wisely!
 
+---
+
 ## Mixed strategy Nash equilibria 
 
 | Player 1 \ Player 2 | Rock (P2) | Paper (P2) | Scissors (P2) | Lizard (P2) | Spock (P2) |
@@ -58,7 +60,57 @@ npm run dev
 | Lizard (P1)         | (0, 1)    | (1, 0)     | (0, 1)        | (0, 0)      | (1, 0)     |
 | Spock (P1)          | (1, 0)    | (0, 1)     | (1, 0)        | (0, 1)      | (0, 0)     |
 
+### Rock:
 
+- Vs Rock (Tie): 0
+- Vs Paper (Lose): -1
+- Vs Scissors (Win): +1
+- Vs Lizard (Win): +1
+- Vs Spock (Lose): -1
+
+**Expected payoff for Rock =** \( \frac{1}{5} \times (0 - 1 + 1 + 1 - 1) = 0 \)
+
+### Paper:
+
+- Vs Rock (Win): +1
+- Vs Paper (Tie): 0
+- Vs Scissors (Lose): -1
+- Vs Lizard (Lose): -1
+- Vs Spock (Win): +1
+
+**Expected payoff for Paper =** \( \frac{1}{5} \times (1 + 0 - 1 - 1 + 1) = 0 \)
+
+### Scissors:
+
+- Vs Rock (Lose): -1
+- Vs Paper (Win): +1
+- Vs Scissors (Tie): 0
+- Vs Lizard (Win): +1
+- Vs Spock (Lose): -1
+
+**Expected payoff for Scissors =** \( \frac{1}{5} \times (-1 + 1 + 0 + 1 - 1) = 0 \)
+
+### Lizard:
+
+- Vs Rock (Lose): -1
+- Vs Paper (Win): +1
+- Vs Scissors (Lose): -1
+- Vs Lizard (Tie): 0
+- Vs Spock (Win): +1
+
+**Expected payoff for Lizard =** \( \frac{1}{5} \times (-1 + 1 - 1 + 0 + 1) = 0 \)
+
+### Spock:
+
+- Vs Rock (Win): +1
+- Vs Paper (Lose): -1
+- Vs Scissors (Win): +1
+- Vs Lizard (Lose): -1
+- Vs Spock (Tie): 0
+
+**Expected payoff for Spock =** \( \frac{1}{5} \times (1 - 1 + 1 - 1 + 0) = 0 \)
+
+This calculation confirms that the Mixed Strategy Nash Equilibrium is to choose each strategy with an equal probability of \frac{1}{5} or 20%. 
 
 ---
 
