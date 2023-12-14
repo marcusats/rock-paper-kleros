@@ -110,7 +110,7 @@ npm run dev
 
 **Expected payoff for Spock =**  1/5 * (1 - 1 + 1 - 1 + 0) = 0 
 
-This calculation confirms that the Mixed Strategy Nash Equilibrium is to choose each strategy with an equal probability of \frac{1}{5} or 20%. 
+This calculation confirms that the game is in equilibrium where each strategy has a probability of 20%. 
 
 ---
 
