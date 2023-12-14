@@ -84,10 +84,10 @@ function getMove(address: string, gameId: number): Move| null {
     return foundMove || null;
 }
 
-function deleteMove(address: string): void {
+function deleteMove(address: string,  gameId: number): void {
     let existingMoves: Move[] = JSON.parse(localStorage.getItem('moves') || '[]');
 
-    existingMoves = existingMoves.filter(move => move.address !== address);
+    existingMoves = existingMoves.filter(move => (move.address.toLowerCase() !== address.toLowerCase() && move.gameId !== gameId));
 
     localStorage.setItem('moves', JSON.stringify(existingMoves));
 }

@@ -3,7 +3,7 @@ import { useGlobalContext } from '@/context/store';
 import Button from '../regular/Button';
 import { useWalletClient, usePublicClient, useAccount} from 'wagmi';
 import { abiRPS } from '@/utils/contracts/RPS';
-import { deleteGame, getGameById, getMove } from '@/utils/storage';
+import { deleteGame, getGameById, getMove, deleteMove} from '@/utils/storage';
 import { Game } from '@/utils/types';
 import WaitingForNextMove from '../screens/game/gameLogic/waiting';
 import { useRouter } from 'next/router';
@@ -71,8 +71,9 @@ const Ready: React.FC = ( ) => {
             })
 
             await walletClient?.writeContract(request)
+            deleteGame(game?.id as number)
 
-        
+            deleteMove(userAddress as string, game?.id as number)
             goTo(0)
             router.push("/")
 
