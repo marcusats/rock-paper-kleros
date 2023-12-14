@@ -48,6 +48,17 @@ npm run dev
 2. **Create or Join a Game**: Follow the on-screen instructions to participate in a game.
 3. **Play**: Choose your move wisely!
 
+## Mixed strategy Nash equilibria 
+
+| Player 1 \ Player 2 | Rock (P2) | Paper (P2) | Scissors (P2) | Lizard (P2) | Spock (P2) |
+|---------------------|-----------|------------|---------------|-------------|------------|
+| Rock (P1)           | (1, 1)    | (0, 1)     | (1, 0)        | (1, 0)      | (0, 1)     |
+| Paper (P1)          | (1, 0)    | (1, 1)     | (0, 1)        | (0, 1)      | (1, 0)     |
+| Scissors (P1)       | (0, 1)    | (1, 0)     | (1, 1)        | (1, 0)      | (0, 1)     |
+| Lizard (P1)         | (0, 1)    | (1, 0)     | (0, 1)        | (1, 1)      | (1, 0)     |
+| Spock (P1)          | (1, 0)    | (0, 1)     | (1, 0)        | (0, 1)      | (1, 1)     |
+
+
 
 ---
 
