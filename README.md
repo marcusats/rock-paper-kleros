@@ -12,7 +12,7 @@ This project is a decentralized application (DApp) for playing an extended versi
 - **Styling**: TailwindCSS
 - **Blockchain Interactions**: Wagmi, Ethers.js, Viem
 - **Ethereum Testnet**: Goerli
-- **Smart Contract**: [RPS.Sol](github.com/clesaege/RPS/blob/master/RPS.sol)
+- **Smart Contract**: [RPS.Sol](https://github.com/clesaege/RPS/blob/master/RPS.sol)
 
 ## Features
 
