@@ -68,7 +68,7 @@ npm run dev
 - Vs Lizard (Win): +1
 - Vs Spock (Lose): -1
 
-**Expected payoff for Rock =** \( 1/5 * (0 - 1 + 1 + 1 - 1) = 0 \)
+**Expected payoff for Rock =**  1/5 * (0 - 1 + 1 + 1 - 1) = 0 
 
 #### Paper:
 
@@ -78,7 +78,7 @@ npm run dev
 - Vs Lizard (Lose): -1
 - Vs Spock (Win): +1
 
-**Expected payoff for Paper =** \( 1/5 * (1 + 0 - 1 - 1 + 1) = 0 \)
+**Expected payoff for Paper =**  1/5 * (1 + 0 - 1 - 1 + 1) = 0 
 
 #### Scissors:
 
@@ -88,7 +88,7 @@ npm run dev
 - Vs Lizard (Win): +1
 - Vs Spock (Lose): -1
 
-**Expected payoff for Scissors =** \( 1/5 * (-1 + 1 + 0 + 1 - 1) = 0 \)
+**Expected payoff for Scissors =**  1/5 * (-1 + 1 + 0 + 1 - 1) = 0 
 
 #### Lizard:
 
@@ -98,7 +98,7 @@ npm run dev
 - Vs Lizard (Tie): 0
 - Vs Spock (Win): +1
 
-**Expected payoff for Lizard =** \( 1/5 * (-1 + 1 - 1 + 0 + 1) = 0 \)
+**Expected payoff for Lizard =**  1/5 * (-1 + 1 - 1 + 0 + 1) = 0 
 
 #### Spock:
 
@@ -108,7 +108,7 @@ npm run dev
 - Vs Lizard (Lose): -1
 - Vs Spock (Tie): 0
 
-**Expected payoff for Spock =** \( 1/5 * (1 - 1 + 1 - 1 + 0) = 0 \)
+**Expected payoff for Spock =**  1/5 * (1 - 1 + 1 - 1 + 0) = 0 
 
 This calculation confirms that the Mixed Strategy Nash Equilibrium is to choose each strategy with an equal probability of \frac{1}{5} or 20%. 
 
