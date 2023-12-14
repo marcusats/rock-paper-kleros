@@ -41,7 +41,10 @@ const WaitingForNextMove: React.FC = () => {
     async function getStake(){
         setLoading(true)
         try{
-            
+            console.log("one",(game?.players.player2 === userAddress) )
+            console.log("2", game?.address )
+            console.log("3",  userAddress)
+
             const { request } = await publicClient.simulateContract({
                 address: game?.address as `0x${string}`,
                 abi: abiRPS,
