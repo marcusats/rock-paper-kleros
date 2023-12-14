@@ -60,7 +60,7 @@ npm run dev
 | Lizard (P1)         | (0, 1)    | (1, 0)     | (0, 1)        | (0, 0)      | (1, 0)     |
 | Spock (P1)          | (1, 0)    | (0, 1)     | (1, 0)        | (0, 1)      | (0, 0)     |
 
-### Rock:
+#### Rock:
 
 - Vs Rock (Tie): 0
 - Vs Paper (Lose): -1
@@ -70,7 +70,7 @@ npm run dev
 
 **Expected payoff for Rock =** \( 1/5 * (0 - 1 + 1 + 1 - 1) = 0 \)
 
-### Paper:
+#### Paper:
 
 - Vs Rock (Win): +1
 - Vs Paper (Tie): 0
@@ -80,7 +80,7 @@ npm run dev
 
 **Expected payoff for Paper =** \( 1/5 * (1 + 0 - 1 - 1 + 1) = 0 \)
 
-### Scissors:
+#### Scissors:
 
 - Vs Rock (Lose): -1
 - Vs Paper (Win): +1
@@ -90,7 +90,7 @@ npm run dev
 
 **Expected payoff for Scissors =** \( 1/5 * (-1 + 1 + 0 + 1 - 1) = 0 \)
 
-### Lizard:
+#### Lizard:
 
 - Vs Rock (Lose): -1
 - Vs Paper (Win): +1
@@ -100,7 +100,7 @@ npm run dev
 
 **Expected payoff for Lizard =** \( 1/5 * (-1 + 1 - 1 + 0 + 1) = 0 \)
 
-### Spock:
+#### Spock:
 
 - Vs Rock (Win): +1
 - Vs Paper (Lose): -1
