@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rock-Paper-Scissors-Lizard-Spock DApp
 
-## Getting Started
+This project is a decentralized application (DApp) for playing an extended version of Rock-Paper-Scissors, which includes two additional weapons: Lizard and Spock. The game is built on the Ethereum blockchain and can be played using MetaMask on the specified Ethereum testnet.
 
-First, run the development server:
+## Technologies Used
+
+- **Frontend**: Next.js with TypeScript
+- **Styling**: TailwindCSS
+- **Blockchain Interactions**: Wagmi, Ethers.js, Viem
+- **Ethereum Testnet**: Goerli
+- **Smart Contract**: [RPS.Sol](github.com/clesaege/RPS/blob/master/RPS.sol)
+
+## Features
+
+- **Create a Game**: Users can create a game by staking ETH and choosing an opponent.
+- **Join a Game**: Opponents can join the game by staking the same amount of ETH.
+- **Gameplay**: The first player makes a move by submitting a hashed version of their choice along with a salt. The second player then chooses their move.
+- **Reveal and Settlement**: The first player reveals their move, and the contract resolves the game, distributing the ETH to the winner or splitting in case of a tie.
+- **Timeouts**: Implemented to handle situations where a party stops responding.
+
+## Security Considerations
+
+This application is designed with security in mind to prevent loss of ETH. [Explain any specific security measures or considerations in your implementation.]
+
+## Installation and Setup
 
 ```bash
+git clone https://github.com/marcusats/rock-paper-kleros.git
+cd rock-paper-kleros
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Using the DApp
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Connect Wallet**: Use MetaMask to connect your wallet.
+2. **Create or Join a Game**: Follow the on-screen instructions to participate in a game.
+3. **Play**: Choose your move wisely!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+This project is part of a job application and is intended to demonstrate skills in building decentralized applications using modern web technologies.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Marcusats
