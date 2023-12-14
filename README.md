@@ -2,6 +2,8 @@
 
 This project is a decentralized application (DApp) for playing an extended version of Rock-Paper-Scissors, which includes two additional weapons: Lizard and Spock. The game is built on the Ethereum blockchain and can be played using MetaMask on the specified Ethereum testnet.
 
+[![Watch the Demo](https://img.youtube.com/vi/Ud8eFKDfoBE/0.jpg)](https://www.youtube.com/watch?v=Ud8eFKDfoBE)
+
 ## Technologies Used
 
 - **Frontend**: Next.js with TypeScript
