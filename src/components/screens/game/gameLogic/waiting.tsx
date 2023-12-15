@@ -18,8 +18,8 @@ const WaitingForNextMove: React.FC = () => {
     const router = useRouter()
  
     async function setUp() {
-        
-        if(gameAddress !== ""){
+        try
+        {if(gameAddress !== ""){
             const last = await publicClient.readContract({
                 address: gameAddress as `0x${string}`,
                 abi: abiRPS,
@@ -32,7 +32,7 @@ const WaitingForNextMove: React.FC = () => {
             setGame(game as Game)
 
             console.log("game", game)
-        }
+        }}catch(e){}
 
 
     }

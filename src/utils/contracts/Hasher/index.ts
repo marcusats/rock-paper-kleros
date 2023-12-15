@@ -1,8 +1,8 @@
-export const hasherAddress: `0x${string}` = "0x9852A5d622C2B7f7b486a89f9AaB94Dc9ea89BD6"
+export const hasherAddress: `0x${string}` = "0x3A85936aBBE5E69d5a8B2a65bb3aC5E8778E8711"
 
 export const hasherAbi = [
 	{
-		"constant": false,
+		"constant": true,
 		"inputs": [
 			{
 				"name": "_c",
@@ -21,7 +21,7 @@ export const hasherAbi = [
 			}
 		],
 		"payable": false,
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	}
 ];

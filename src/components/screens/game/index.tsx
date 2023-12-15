@@ -42,7 +42,7 @@ const GameScreen: React.FC = () => {
         if(isConnected && gameAddress){
             setLoading(true)
             const player = await checkPlayer(publicClient, gameAddress as string, userAddress);
-            setIsPlayer(player);
+            setIsPlayer(player as boolean);
             const players: Players= await getPlayers(publicClient, gameAddress as string)
 
             const stake = await getStake(publicClient, gameAddress as string)

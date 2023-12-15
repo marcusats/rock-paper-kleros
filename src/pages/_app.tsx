@@ -8,7 +8,6 @@ import {
 } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import {
-  goerli,
   polygonMumbai,
 } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
@@ -17,7 +16,7 @@ import { GlobalContextProvider } from '@/context/store';
 import Layout from './layout';
 
 const { chains, publicClient } = configureChains(
-    [goerli],
+    [polygonMumbai],
     [
       alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_INFRA_KEY as string }),
       publicProvider()

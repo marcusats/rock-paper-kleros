@@ -4,21 +4,23 @@ import { hasherAddress, hasherAbi } from '../Hasher';
 
 async function checkPlayer(publicClient: any, gameAddress: string, userAddress: `0x${string}` | undefined ) {
     if (!userAddress) return false;
-
-    const player1 = await publicClient.readContract({
-        address: gameAddress,
-        abi: abiRPS,
-        functionName: 'j1',
-    })
+    try{
+        const player1 = await publicClient.readContract({
+            address: gameAddress,
+            abi: abiRPS,
+            functionName: 'j1',
+        })
+        
+        console.log("Player:",player1)
+        const player2 = await publicClient.readContract({
+            address: gameAddress,
+            abi: abiRPS,
+            functionName: 'j2',
+        })
+        console.log(player2)
+        return player1.toLowerCase() === userAddress.toLowerCase() || player2.toLowerCase() === userAddress.toLowerCase();
+    }catch(e){}
     
-    console.log("Player:",player1)
-    const player2 = await publicClient.readContract({
-        address: gameAddress,
-        abi: abiRPS,
-        functionName: 'j2',
-    })
-    console.log(player2)
-    return player1.toLowerCase() === userAddress.toLowerCase() || player2.toLowerCase() === userAddress.toLowerCase();
 }
 
 async function getStake(publicClient: any, gameAddress:string){

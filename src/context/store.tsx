@@ -68,34 +68,37 @@ export const GlobalContextProvider= ({ children }) => {
 
   async function set() {
     if(gameAddress !== "" && gameAddress !== "create" ){
+      try{ 
         const last = await publicClient.readContract({
           address: gameAddress as `0x${string}`,
           abi: abiRPS,
           functionName: 'lastAction',
         })
         setLastAction(last as number)
+      }catch(e){}
     }
   }
   async function setC2() {
     if(gameAddress !== "" && gameAddress !== "create" ){
-      const move = await publicClient.readContract({
-        address: gameAddress as `0x${string}`,
-        abi: abiRPS,
-        functionName: 'c2',
-      })
-      const game = getGameByAddress(gameAddress)
+      try{
+        const move = await publicClient.readContract({
+          address: gameAddress as `0x${string}`,
+          abi: abiRPS,
+          functionName: 'c2',
+        })
+        const game = getGameByAddress(gameAddress)
       
-      const newGame: Game = { 
-        id: game?.id as number, 
-        name: game?.name as string, 
-        players: game?.players as Players,
-        address: game?.address as string,
-        stake: game?.stake as string,
-        ready: move as number > 0,
-      } 
+        const newGame: Game = { 
+          id: game?.id as number, 
+          name: game?.name as string, 
+          players: game?.players as Players,
+          address: game?.address as string,
+          stake: game?.stake as string,
+          ready: move as number > 0,
+        } 
 
-      updateGame(game?.id as number, newGame)
-        
+        updateGame(game?.id as number, newGame)
+      }catch(e){}        
     }
   }
 
