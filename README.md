@@ -11,7 +11,7 @@ This project is a decentralized application (DApp) for playing an extended versi
 - **Frontend**: Next.js with TypeScript
 - **Styling**: TailwindCSS
 - **Blockchain Interactions**: Wagmi, Ethers.js, Viem
-- **Ethereum Testnet**: Goerli
+- **Ethereum Testnet**: Polygon Mumbai
 - **Smart Contract**: [RPS.Sol](https://github.com/clesaege/RPS/blob/master/RPS.sol)
 
 ## Installation and Setup
