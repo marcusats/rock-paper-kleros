@@ -4,8 +4,8 @@ This project is a decentralized application (DApp) for playing an extended versi
 
 ### Demo Video
 
-[![Watch the Demo](https://img.youtube.com/vi/Bar1-BIdKSI/0.jpg)](https://www.youtube.com/watch?v=Bar1-BIdKSI
-)
+[![Watch the Demo](https://img.youtube.com/vi/Bar1-BIdKSI/0.jpg)](https://www.youtube.com/watch?v=Bar1-BIdKSI)
+
 ## Technologies Used
 
 - **Frontend**: Next.js with TypeScript
