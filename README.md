@@ -14,6 +14,15 @@ This project is a decentralized application (DApp) for playing an extended versi
 - **Ethereum Testnet**: Goerli
 - **Smart Contract**: [RPS.Sol](https://github.com/clesaege/RPS/blob/master/RPS.sol)
 
+## Installation and Setup
+
+```bash
+git clone https://github.com/marcusats/rock-paper-kleros.git
+cd rock-paper-kleros
+npm install
+npm run dev
+```
+
 ## Features
 
 - **Create a Game**: Users can create a game by staking ETH and choosing an opponent.
@@ -33,15 +42,6 @@ In developing this DApp, particular attention has been given to security aspects
 
 - **Timeout Manipulation**: The contract enforces strict rules for timeouts to prevent players from stalling or manipulating the game's progression. This ensures fairness and timely resolution of games.
 
-
-## Installation and Setup
-
-```bash
-git clone https://github.com/marcusats/rock-paper-kleros.git
-cd rock-paper-kleros
-npm install
-npm run dev
-```
 
 ## Using the DApp
 
