@@ -27,10 +27,10 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  display: none; /* for Webkit browsers */
+  display: none;
 }
 
 .custom-scrollbar {
-  -ms-overflow-style: none;  /* for Internet Explorer and Edge */
-  scrollbar-width: none; /* for Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
 }
