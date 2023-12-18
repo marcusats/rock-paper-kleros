@@ -16,7 +16,19 @@ const CreateScreen: React.FC = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-       
+
+        
+        const stakeValueNumber = parseFloat(stakeValue);
+        if (isNaN(stakeValueNumber) || stakeValueNumber <= 0) {
+            alert("Stake Value must be greater than 0");
+            return;
+        }
+
+        if (playerAddress === userAddress) {
+            alert("Second Player Address cannot be the same as your address");
+            return;
+        }
+
         console.log('Game Name:', gameName);
         console.log('Second Player Address:', playerAddress);
         console.log('Stake Value:', stakeValue);
