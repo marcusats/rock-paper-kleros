@@ -121,7 +121,13 @@ export const GlobalContextProvider= ({ children }) => {
     setTimedout(res<=0)
   },[lastAction])
   
-  const { step, next, steps, currentStepIndex, goTo } = useSteps([<Start />, <GameScreen />, <CreateScreen/>, <Winner desc={decision}/>]);
+  const { step, next, steps, currentStepIndex, goTo } = useSteps([
+    <Start key="start" />, 
+    <GameScreen key="gameScreen" />, 
+    <CreateScreen key="createScreen"/>, 
+    <Winner key="winner" desc={decision}/>
+  ]);
+
 
   return (
     <GlobalContext.Provider 

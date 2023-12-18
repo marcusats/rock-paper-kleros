@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@/components/regular/Button';
 import { useAccount, useWalletClient } from 'wagmi'
-import { Deploy } from '@/utils/contracts/Deploy';
 import { addGame, getCurrentIndex } from '@/utils/storage';
 import { Game } from '@/utils/types';
 import { useGlobalContext } from '@/context/store';
@@ -21,13 +20,14 @@ const CreateScreen: React.FC = () => {
         console.log('Game Name:', gameName);
         console.log('Second Player Address:', playerAddress);
         console.log('Stake Value:', stakeValue);
-       
+        
         const game: Game ={
             id: getCurrentIndex(),
             address: "",
             name: gameName,
             players: {player1: userAddress?.toString(), player2: playerAddress},
-            stake: stakeValue
+            stake: stakeValue,
+            ready: false
         }
         addGame(game);
         goTo(0)
@@ -40,7 +40,7 @@ const CreateScreen: React.FC = () => {
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3 mb-6 md:mb-0">
                         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="game-name">
-                            Game's Name
+                            Game&apos;s Name
                         </label>
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"

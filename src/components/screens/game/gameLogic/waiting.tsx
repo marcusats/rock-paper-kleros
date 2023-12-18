@@ -80,7 +80,7 @@ const WaitingForNextMove: React.FC = () => {
 
     return (
         <div className="flex flex-col w-full h-full items-center justify-center m-7 bg-white shadow-xl rounded-lg border border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit">
-            <p className="text-gray-300 text-lg mb-4">Waiting for the next player's move...</p>
+            <p className="text-gray-300 text-lg mb-4">Waiting for the next player&apos;s move...</p>
             <div className='flex flex-col items-center justify-center'>
                 <Countdown players={game?.players as Players} calculateRemainingTime={calculateRemainingTime} unixTimestamp={lastAction}/>
                 <Button onClick={()=>{getStake()}} disabled={(calculateRemainingTime() > 0)} text='Get Stake'></Button>
